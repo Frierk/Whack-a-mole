@@ -44,9 +44,20 @@
             normalToolStripMenuItem = new ToolStripMenuItem();
             fastToolStripMenuItem = new ToolStripMenuItem();
             crazyToolStripMenuItem = new ToolStripMenuItem();
+            modeToolStripMenuItem = new ToolStripMenuItem();
+            molesToolStripMenuItem = new ToolStripMenuItem();
+            molesToolStripMenuItem1 = new ToolStripMenuItem();
+            molesToolStripMenuItem2 = new ToolStripMenuItem();
+            molesToolStripMenuItem3 = new ToolStripMenuItem();
+            resetToolStripMenuItem = new ToolStripMenuItem();
             timer1 = new System.Windows.Forms.Timer(components);
             label1 = new Label();
             timer2 = new System.Windows.Forms.Timer(components);
+            label2 = new Label();
+            progressBar1 = new ProgressBar();
+            timer3 = new System.Windows.Forms.Timer(components);
+            label3 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -170,7 +181,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(24, 24);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripComboBox1 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripComboBox1, modeToolStripMenuItem, resetToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 33);
@@ -187,30 +198,72 @@
             // slowToolStripMenuItem
             // 
             slowToolStripMenuItem.Name = "slowToolStripMenuItem";
-            slowToolStripMenuItem.Size = new Size(270, 34);
+            slowToolStripMenuItem.Size = new Size(173, 34);
             slowToolStripMenuItem.Text = "Slow";
             slowToolStripMenuItem.Click += slowToolStripMenuItem_Click;
             // 
             // normalToolStripMenuItem
             // 
             normalToolStripMenuItem.Name = "normalToolStripMenuItem";
-            normalToolStripMenuItem.Size = new Size(270, 34);
+            normalToolStripMenuItem.Size = new Size(173, 34);
             normalToolStripMenuItem.Text = "Normal";
             normalToolStripMenuItem.Click += normalToolStripMenuItem_Click;
             // 
             // fastToolStripMenuItem
             // 
             fastToolStripMenuItem.Name = "fastToolStripMenuItem";
-            fastToolStripMenuItem.Size = new Size(270, 34);
+            fastToolStripMenuItem.Size = new Size(173, 34);
             fastToolStripMenuItem.Text = "Fast";
             fastToolStripMenuItem.Click += fastToolStripMenuItem_Click;
             // 
             // crazyToolStripMenuItem
             // 
             crazyToolStripMenuItem.Name = "crazyToolStripMenuItem";
-            crazyToolStripMenuItem.Size = new Size(270, 34);
+            crazyToolStripMenuItem.Size = new Size(173, 34);
             crazyToolStripMenuItem.Text = "Crazy";
             crazyToolStripMenuItem.Click += crazyToolStripMenuItem_Click;
+            // 
+            // modeToolStripMenuItem
+            // 
+            modeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { molesToolStripMenuItem, molesToolStripMenuItem1, molesToolStripMenuItem2, molesToolStripMenuItem3 });
+            modeToolStripMenuItem.Name = "modeToolStripMenuItem";
+            modeToolStripMenuItem.Size = new Size(75, 29);
+            modeToolStripMenuItem.Text = "Mode";
+            // 
+            // molesToolStripMenuItem
+            // 
+            molesToolStripMenuItem.Name = "molesToolStripMenuItem";
+            molesToolStripMenuItem.Size = new Size(177, 34);
+            molesToolStripMenuItem.Text = "1 Moles";
+            molesToolStripMenuItem.Click += molesToolStripMenuItem_Click;
+            // 
+            // molesToolStripMenuItem1
+            // 
+            molesToolStripMenuItem1.Name = "molesToolStripMenuItem1";
+            molesToolStripMenuItem1.Size = new Size(177, 34);
+            molesToolStripMenuItem1.Text = "2 Moles";
+            molesToolStripMenuItem1.Click += molesToolStripMenuItem1_Click;
+            // 
+            // molesToolStripMenuItem2
+            // 
+            molesToolStripMenuItem2.Name = "molesToolStripMenuItem2";
+            molesToolStripMenuItem2.Size = new Size(177, 34);
+            molesToolStripMenuItem2.Text = "3 Moles";
+            molesToolStripMenuItem2.Click += molesToolStripMenuItem2_Click;
+            // 
+            // molesToolStripMenuItem3
+            // 
+            molesToolStripMenuItem3.Name = "molesToolStripMenuItem3";
+            molesToolStripMenuItem3.Size = new Size(177, 34);
+            molesToolStripMenuItem3.Text = "4 Moles";
+            molesToolStripMenuItem3.Click += molesToolStripMenuItem3_Click;
+            // 
+            // resetToolStripMenuItem
+            // 
+            resetToolStripMenuItem.Name = "resetToolStripMenuItem";
+            resetToolStripMenuItem.Size = new Size(70, 29);
+            resetToolStripMenuItem.Text = "Reset";
+            resetToolStripMenuItem.Click += resetToolStripMenuItem_Click;
             // 
             // timer1
             // 
@@ -221,7 +274,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(687, 46);
+            label1.Location = new Point(626, 67);
             label1.Name = "label1";
             label1.Size = new Size(69, 25);
             label1.TabIndex = 10;
@@ -232,12 +285,59 @@
             timer2.Interval = 2000;
             timer2.Tick += timer2_Tick;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(626, 42);
+            label2.Name = "label2";
+            label2.Size = new Size(108, 25);
+            label2.TabIndex = 11;
+            label2.Text = "High Score: ";
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(12, 434);
+            progressBar1.Maximum = 30;
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(776, 34);
+            progressBar1.TabIndex = 12;
+            // 
+            // timer3
+            // 
+            timer3.Enabled = true;
+            timer3.Interval = 1000;
+            timer3.Tick += timer3_Tick;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(362, 406);
+            label3.Name = "label3";
+            label3.Size = new Size(103, 25);
+            label3.TabIndex = 13;
+            label3.Text = "Tid kvar: 30";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(358, 221);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 14;
+            button1.Text = "Retry";
+            button1.UseVisualStyleBackColor = true;
+            button1.Visible = false;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lime;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 480);
+            Controls.Add(button1);
+            Controls.Add(label3);
+            Controls.Add(progressBar1);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox9);
             Controls.Add(pictureBox8);
@@ -287,5 +387,16 @@
         private ToolStripMenuItem normalToolStripMenuItem;
         private ToolStripMenuItem fastToolStripMenuItem;
         private ToolStripMenuItem crazyToolStripMenuItem;
+        private ToolStripMenuItem modeToolStripMenuItem;
+        private ToolStripMenuItem molesToolStripMenuItem;
+        private ToolStripMenuItem molesToolStripMenuItem1;
+        private ToolStripMenuItem molesToolStripMenuItem2;
+        private ToolStripMenuItem molesToolStripMenuItem3;
+        private ToolStripMenuItem resetToolStripMenuItem;
+        private Label label2;
+        private ProgressBar progressBar1;
+        private System.Windows.Forms.Timer timer3;
+        private Label label3;
+        private Button button1;
     }
 }
