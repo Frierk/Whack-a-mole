@@ -59,6 +59,8 @@ namespace Whack_a_mole
                 highscore = points;
                 label2.Text = "Hightscore: " + highscore;
             }
+            SoundPlayer simpleSound = new SoundPlayer(Resources.chord);
+            simpleSound.Play();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -161,6 +163,11 @@ namespace Whack_a_mole
             label2.Text = "Highscore: ";
             label1.Text = "Points: ";
             tid = 0;
+            progressBar1.Value = 0;
+            mode = 1;
+            timer1.Interval = 750;
+            timer2.Interval = 2000;
+            mod = 1;
         }
 
         private void timer3_Tick(object sender, EventArgs e)
@@ -168,8 +175,8 @@ namespace Whack_a_mole
             tid += 1;
             if (tid < 30)
             {
-                label3.Text = "Tid kvar: " + (30 - tid);
                 progressBar1.Value = progressBar1.Value + 1;
+                label3.Text = "Tid kvar: " + (30 - tid);
             }
             else
             {
@@ -201,6 +208,24 @@ namespace Whack_a_mole
             timer3.Start();
             timer1.Start();
             timer2.Start();
+        }
+
+        private void oändligToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (oändligToolStripMenuItem.Checked)
+            {
+                timer3.Stop();
+                tid = 0;
+                progressBar1.Value = 0;
+                progressBar1.Visible = false;
+                label3.Visible = false;
+            }
+            else
+            {
+                timer3.Start();
+                progressBar1.Visible = true;
+                label3.Visible = true;
+            }
         }
     }
 }

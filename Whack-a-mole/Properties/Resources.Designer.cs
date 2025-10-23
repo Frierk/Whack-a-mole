@@ -61,22 +61,11 @@ namespace Whack_a_mole.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap _1920x1080_gray_solid_color_background {
+        internal static System.IO.UnmanagedMemoryStream chord {
             get {
-                object obj = ResourceManager.GetObject("1920x1080-gray-solid-color-background", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dancing_cat {
-            get {
-                object obj = ResourceManager.GetObject("dancing-cat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("chord", resourceCulture);
             }
         }
         
@@ -106,16 +95,6 @@ namespace Whack_a_mole.Properties {
         internal static System.Drawing.Bitmap Mole_Wacked {
             get {
                 object obj = ResourceManager.GetObject("Mole-Wacked", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap water {
-            get {
-                object obj = ResourceManager.GetObject("water", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

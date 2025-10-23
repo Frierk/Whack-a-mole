@@ -49,6 +49,7 @@
             molesToolStripMenuItem1 = new ToolStripMenuItem();
             molesToolStripMenuItem2 = new ToolStripMenuItem();
             molesToolStripMenuItem3 = new ToolStripMenuItem();
+            oändligToolStripMenuItem = new ToolStripMenuItem();
             resetToolStripMenuItem = new ToolStripMenuItem();
             timer1 = new System.Windows.Forms.Timer(components);
             label1 = new Label();
@@ -225,7 +226,7 @@
             // 
             // modeToolStripMenuItem
             // 
-            modeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { molesToolStripMenuItem, molesToolStripMenuItem1, molesToolStripMenuItem2, molesToolStripMenuItem3 });
+            modeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { molesToolStripMenuItem, molesToolStripMenuItem1, molesToolStripMenuItem2, molesToolStripMenuItem3, oändligToolStripMenuItem });
             modeToolStripMenuItem.Name = "modeToolStripMenuItem";
             modeToolStripMenuItem.Size = new Size(75, 29);
             modeToolStripMenuItem.Text = "Mode";
@@ -233,30 +234,38 @@
             // molesToolStripMenuItem
             // 
             molesToolStripMenuItem.Name = "molesToolStripMenuItem";
-            molesToolStripMenuItem.Size = new Size(177, 34);
+            molesToolStripMenuItem.Size = new Size(270, 34);
             molesToolStripMenuItem.Text = "1 Moles";
             molesToolStripMenuItem.Click += molesToolStripMenuItem_Click;
             // 
             // molesToolStripMenuItem1
             // 
             molesToolStripMenuItem1.Name = "molesToolStripMenuItem1";
-            molesToolStripMenuItem1.Size = new Size(177, 34);
+            molesToolStripMenuItem1.Size = new Size(270, 34);
             molesToolStripMenuItem1.Text = "2 Moles";
             molesToolStripMenuItem1.Click += molesToolStripMenuItem1_Click;
             // 
             // molesToolStripMenuItem2
             // 
             molesToolStripMenuItem2.Name = "molesToolStripMenuItem2";
-            molesToolStripMenuItem2.Size = new Size(177, 34);
+            molesToolStripMenuItem2.Size = new Size(270, 34);
             molesToolStripMenuItem2.Text = "3 Moles";
             molesToolStripMenuItem2.Click += molesToolStripMenuItem2_Click;
             // 
             // molesToolStripMenuItem3
             // 
             molesToolStripMenuItem3.Name = "molesToolStripMenuItem3";
-            molesToolStripMenuItem3.Size = new Size(177, 34);
+            molesToolStripMenuItem3.Size = new Size(270, 34);
             molesToolStripMenuItem3.Text = "4 Moles";
             molesToolStripMenuItem3.Click += molesToolStripMenuItem3_Click;
+            // 
+            // oändligToolStripMenuItem
+            // 
+            oändligToolStripMenuItem.CheckOnClick = true;
+            oändligToolStripMenuItem.Name = "oändligToolStripMenuItem";
+            oändligToolStripMenuItem.Size = new Size(270, 34);
+            oändligToolStripMenuItem.Text = "Infinite";
+            oändligToolStripMenuItem.Click += oändligToolStripMenuItem_Click;
             // 
             // resetToolStripMenuItem
             // 
@@ -300,6 +309,7 @@
             progressBar1.Maximum = 30;
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(776, 34);
+            progressBar1.Style = ProgressBarStyle.Continuous;
             progressBar1.TabIndex = 12;
             // 
             // timer3
@@ -398,5 +408,6 @@
         private System.Windows.Forms.Timer timer3;
         private Label label3;
         private Button button1;
+        private ToolStripMenuItem oändligToolStripMenuItem;
     }
 }
