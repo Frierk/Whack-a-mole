@@ -160,6 +160,7 @@ namespace Whack_a_mole
             timer1.Interval = 750;
             timer2.Interval = 2000;
             mod = 1;
+            Mole_down();
         }
 
         private void timer3_Tick(object sender, EventArgs e)
