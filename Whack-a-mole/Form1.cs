@@ -6,12 +6,15 @@ namespace Whack_a_mole
 {
     public partial class Form1 : Form
     {
+        SoundPlayer pointSound = new SoundPlayer(Resources.chord);
+        
         public Form1()
         {
             InitializeComponent();
+            label2.Text = "Hightscore: " + Properties.Settings.Default.highscore;
         }
         int mole, mole2, mole3, mole4, mode = 1, tid;
-        double mod = 1, points, highscore;
+        double mod = 1, points;
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             click(pictureBox1);
@@ -54,13 +57,13 @@ namespace Whack_a_mole
             points = points + (25 * mod);
             pictureBox.Image = Resources.Mole_Wacked;
             label1.Text = "Points: " + points;
-            if (points > highscore)
+            if (points > Properties.Settings.Default.highscore)
             {
-                highscore = points;
-                label2.Text = "Hightscore: " + highscore;
+                Properties.Settings.Default.highscore = points;
+                Properties.Settings.Default.Save();
+                label2.Text = "Hightscore: " + Properties.Settings.Default.highscore;
             }
-            SoundPlayer simpleSound = new SoundPlayer(Resources.chord);
-            simpleSound.Play();
+            pointSound.Play();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -151,8 +154,6 @@ namespace Whack_a_mole
         private void resetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             points = 0;
-            highscore = 0;
-            label2.Text = "Highscore: ";
             label1.Text = "Points: ";
             tid = 0;
             progressBar1.Value = 0;
